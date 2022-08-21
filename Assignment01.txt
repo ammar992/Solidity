@@ -1,0 +1,23 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+
+
+contract Task1{
+    string public  str = "Hello solidity";
+    
+
+    function getStr()public view returns(string memory){
+        return str;
+    }
+
+}
+contract Tas2{
+    uint num;
+    constructor(){
+        num = 10;
+    }
+    function getNum()public view returns(uint){
+        return num;
+    } 
+}
