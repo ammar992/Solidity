@@ -1,0 +1,62 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+
+
+
+
+
+contract task1{
+    uint num;
+
+
+function setNum(uint _x)public {
+    num = _x;
+}
+
+function getNum()public view returns (uint){
+    return num;
+}
+
+
+}
+
+
+
+contract task2{
+    function evaluateu(uint a,uint b)public pure returns (uint)  {
+       uint sub  = a-b;
+       uint sum = a+b;
+       uint result = sum - sub;
+       return result;
+    }
+}
+
+
+
+contract task3{
+
+error throwerror(string); 
+    function find(int _a)public pure returns(int){
+        if(_a<0){
+            revert throwerror("Value less than 0");
+        }
+        int reminder = _a%3;
+        return reminder;
+
+    }
+}
+
+
+
+contract task4{
+    function average(int256 _a,int256 _b, int256 _c)public pure returns(int){
+        if(_a<0 || _b<0 || _c<0){
+            revert("Not a required number");
+        }
+         int Average = (_a+_b+_c)/3;
+         return Average;
+
+    }
+    
+    }
