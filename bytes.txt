@@ -1,0 +1,24 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract Bytes{
+bytes5 public temp1;
+bytes7 public temp2;
+
+
+function setBytes()public{
+    temp1 = "ase12";
+    temp2 = "abcdefg";
+}
+
+
+// function getBytes()public view returns(bytes1){
+//     return temp1[3];
+// }
+
+function bytesLength() public view returns(uint){
+    return temp2.length;
+}
+
+}
+

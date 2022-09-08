@@ -1,0 +1,32 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+
+contract Enum{
+    enum Status{
+        Pending,
+        Cancelled,
+        Shipped,
+        Accepted,
+        Rejected
+    }
+
+    Status status;
+
+
+    function getStatus() public view returns(Status){
+        return status;
+    }
+    function setStatus(Status _x)public{
+        status = _x;
+    }
+
+    function rej()public{
+        status = Status.Rejected;
+    }
+
+    function defaultStatus()public{
+        delete status;
+    }
+} 
+

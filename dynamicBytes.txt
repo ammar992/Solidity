@@ -1,0 +1,24 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract dynamicBytes{
+bytes public temp;
+
+constructor(){
+    temp = "sdsf56565";
+}
+
+function push()public{
+    temp.push('c');    
+}
+function pop()public{
+    temp.pop();
+}
+function tempLenght()public view returns(uint){
+    return temp.length;
+}
+
+function getTemp(uint _x)public view returns(bytes1){
+return temp[_x];
+}
+}

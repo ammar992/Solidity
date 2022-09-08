@@ -1,0 +1,42 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+
+contract Visibility{
+    uint public x = 10;
+    uint internal y = 100;
+    uint private z = 200;
+
+
+function check1()public pure returns(string memory){
+    return "public";
+}
+function check2()external pure returns(string memory){
+    return "External";
+}
+function check3()internal pure returns(string memory){
+    return "Internal";
+}
+
+function check4()private pure returns(string memory){
+    return "Private";
+}
+
+// function cehckAll()public view returns(string memory){
+//     return check4();
+// }
+
+}
+
+
+contract B is Visibility{
+    string public a = check1();
+}
+
+
+// contract c{
+//     B obj = new B();
+//     function getcaller()public view returns(string memory){
+//         return obj.check3();
+//     }
+// }

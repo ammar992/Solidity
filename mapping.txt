@@ -1,0 +1,78 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+
+// contract Mapping{
+//     mapping(uint=>string) public emp_id;
+
+//     function set_Id()public{
+//         emp_id[35]="Ammar";
+//         emp_id[36]="Saim";
+//         emp_id[33]="Razeen";
+//     }
+
+//     function getId(uint _x)public view returns(string memory){
+//        return emp_id[_x];
+//     }
+// }
+
+
+
+
+
+
+
+// struct don_details{
+//     string namel;
+//     uint age;
+//     string country;
+//     uint don;
+// }
+
+// contract Mapping{
+
+
+//  address public owner;
+
+// constructor(){
+//     owner = msg.sender;
+// }
+
+
+// modifier onlyOwner(){
+//     require(msg.sender==owner);
+//     _;
+// }
+
+//     mapping(address=>don_details)public acc_info;
+
+
+
+// function setDetails(string memory _name,uint _age,string memory _country,uint _don)public{
+//     acc_info[msg.sender] = don_details(_name,_age,_country,acc_info[msg.sender].don + _don);
+// }
+
+// function deleteAccInfo()public onlyOwner{
+//     delete acc_info[msg.sender];
+// }
+
+
+// }
+
+
+contract Mapping{
+    mapping(uint=>string)public Emp_id;
+
+
+    function setId()public{
+        Emp_id[0]= "Ammar";
+        Emp_id[1]= "Saim";
+    }
+
+
+    function getId(uint _x)public view returns(string memory){
+        return Emp_id[_x];
+    }
+}
+
+

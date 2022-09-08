@@ -1,0 +1,156 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+
+// contract test{
+//     struct Employe{
+//         string name;
+//         uint age;
+//         uint id;
+//     }
+
+//     Employe public employe;
+
+//     function setEmploye()public{
+//         employe = Employe("Ammar",10,50);
+//     }
+
+//     function getEmployeName()public view returns(string memory){
+//         return employe.name;
+//     }
+// }
+
+
+// contract test{
+//     struct Book{
+//         string name;
+//         string writer;
+//         uint id;
+//     }
+//     Book book;
+//     function setBook()public{
+//         book = Book("Ammar","Life",65);
+//     }
+
+//     function getBook() public view returns(string memory){
+//         return book.name;
+//     }
+// }
+
+
+
+// contract test{
+
+// struct Book {
+//    string name;
+//     uint id;
+// }
+// Book book;
+
+
+// function setBook()public{
+//     book = Book("Ammar",12);
+// }
+
+
+// function getBook()public view returns(string memory){
+//     return book.name;
+// }
+
+
+
+// }
+
+
+
+
+// contract Struct{
+//     struct Mainemploye{
+//         string name;
+//         uint age;
+//         int id;
+//     }
+//     Mainemploye public mainEmploye;
+//     Mainemploye[] public  mainEmployes;
+
+// function setEmploye()public{
+//     Mainemploye memory emp1 = Mainemploye("Ammar",22,12);
+//     Mainemploye memory emp2 = Mainemploye("Saim",24,24);
+//     Mainemploye memory emp3 = Mainemploye("Razeen",16,65);
+
+// mainEmployes.push(emp1);
+// mainEmployes.push(emp2);
+// mainEmployes.push(emp3);
+// }
+
+// }
+
+
+
+
+
+
+
+// contract Struct{
+//     struct  Employe{
+//         string name;
+//         uint age;
+//         address acc;
+//     }
+
+//     Employe[] public Employes; 
+
+
+// function setval()public{
+//     Employe memory emp1 = Employe("Ammar",20,msg.sender);
+//     Employe memory emp2 = Employe("Saim",24,msg.sender);
+//     Employe memory emp3 = Employe("Razeen",15,msg.sender);
+
+//     Employes.push(emp1);
+//     Employes.push(emp2);
+//     Employes.push(emp3);
+
+//     delete Employes[1].acc;
+
+//     Employes[1].name = "Raza";
+
+//     Employes[0].name = "";
+
+    
+// }
+
+
+// }
+
+
+
+
+
+
+
+contract Struct{
+    struct Employe{
+        string name;
+        uint age;
+    }
+
+    Employe public employes;
+
+
+    function setEmploye()public{
+         employes = Employe("Ammar",12);
+    }
+
+    function getEmployeName()public view returns(string memory){
+        return employes.name;
+    }
+}
+
+
+
+
+
+
+
+
+
