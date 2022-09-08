@@ -1,0 +1,16 @@
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.0;
+
+contract _constructor{
+string public name;
+uint public age;
+address public mainOwner;
+
+constructor(string memory _name ,uint _age,address _mainOwner){
+    name = _name;
+    age = _age;
+    mainOwner = _mainOwner;
+
+}
+}
