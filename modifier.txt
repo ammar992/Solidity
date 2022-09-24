@@ -1,0 +1,43 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+// contract Require{
+
+
+// modifier code{
+//     for (uint i =0;i<10;i++){
+//     }
+//     _;
+// }
+
+//     function fun1()public pure code {
+        
+
+//         }
+
+//     function fun2()public pure code {
+//         for (uint i=0;i<10;i++){
+
+//         }
+
+//     }
+//     function fun3()public pure code {
+
+//     }
+// }
+
+
+contract Require{
+
+uint public  age = 30;
+
+modifier temp(uint _x){
+
+age +=_x; 
+    _;
+}
+
+    function setAge(uint _y)public temp(_y){ 
+        
+    }
+}

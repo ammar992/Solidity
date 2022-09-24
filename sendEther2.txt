@@ -1,0 +1,89 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+
+// contract Send{
+
+//     address payable public  getter = payable (0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2);
+
+//     receive()external payable {}
+
+
+//     function getBlance()public view returns(uint)  {
+//         return address(this).balance;
+//     }
+
+//     function send()public {
+//         bool sent = getter.send(1000000000000000000);
+//         require(sent,"Transiction failed");
+//     }
+    
+//     function Transfer()public {
+//         getter.transfer(1000000000000000000);
+//     }
+
+//     function call()public {
+//         (bool sent,) = getter.call{value:1000000000000000000}('');
+//         require(sent,"Trnasiction failed");
+//     }
+
+
+// }
+
+
+// contract Send{
+
+//     // address payable public  getter = payable (0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2);
+
+//     receive()external payable {}
+
+
+//     function getBlance()public view returns(uint)  {
+//         return address(this).balance;
+//     }
+
+//     function send(address payable getter)public {
+//         bool sent = getter.send(1000000000000000000);
+//         require(sent,"Transiction failed");
+//     }
+    
+//     function Transfer(address payable  getter)public {
+//         getter.transfer(1000000000000000000);
+//     }
+
+//     function call(address payable getter)public {
+//         (bool sent,) = getter.call{value:1000000000000000000}('');
+//         require(sent,"Trnasiction failed");
+//     }
+
+
+// }
+
+
+contract Send{
+
+    // address payable public  getter = payable (0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2);
+
+    receive()external payable {}
+
+
+    // function getBlance()public view returns(uint)  {
+    //     return address(this).balance;
+    // }
+
+    function send(address payable getter)public payable  {
+        bool sent = getter.send(msg.value);
+        require(sent,"Transiction failed");
+    }
+    
+    function Transfer(address payable  getter)public payable {
+        getter.transfer(msg.value);
+    }
+
+    function call(address payable getter)public payable  {
+        (bool sent,) = getter.call{value:msg.value}('');
+        require(sent,"Trnasiction failed");
+    }
+
+
+}

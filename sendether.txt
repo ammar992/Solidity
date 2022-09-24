@@ -1,0 +1,32 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+
+contract sendEth{
+    address payable getter = payable (0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2);
+
+
+    receive()external payable{}
+
+    function checkBaclance()public view returns (uint) {
+        return  address(this).balance;
+    }
+
+
+    function sendEther() public {
+        bool sent = getter.send(1000000000000000000);
+        require(sent,"transition failed");
+    }
+    function Transfer()public {
+         getter.transfer(1000000000000000000);
+    }
+
+    function Call()public {
+        (bool sent,) = getter.call{value:1000000000000000000}("");
+        require(sent,"transition failed");
+    }
+
+
+
+
+}

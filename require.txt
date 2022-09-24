@@ -1,0 +1,28 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+
+
+contract Require{
+    address public  owner = msg.sender;
+    uint public age = 20;
+
+
+    function checkRequire(uint _x)public {
+        age += 5;
+        require(_x>5,"Less than 5");
+
+    }
+
+function onlyOwner()public {
+    require(msg.sender == owner,"You are not an owner");
+    age -=2;
+
+}
+
+
+
+
+
+}
+

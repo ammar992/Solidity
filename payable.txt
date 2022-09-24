@@ -1,0 +1,23 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+
+
+contract Payable{
+
+    // function SendEther()public payable {
+
+    // }
+
+    // function checkEther()public view returns(uint){
+    //     return address(this).balance;
+    // } 
+
+
+    constructor()payable {
+    }
+
+    function get()public view returns(uint){
+        return address(this).balance;
+    }
+}
