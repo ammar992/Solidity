@@ -1,0 +1,199 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+// contract sample{
+//     struct Emp {
+//         string name;
+//         uint age;
+//         uint id;
+//     }
+
+
+//     mapping (uint=>sample) public  info;
+
+//     // function set(uint emp1)public {
+//     //     info[emp1] =  emp(_name,21,2355);
+//     // }
+
+// function set()public {
+
+//     Emp emp1 = Emp("Ammar",23,3535);
+
+// }
+
+// }
+
+
+
+
+// contract test{
+//     struct Employe{
+//         string name;
+//         uint age;
+//         uint id;
+//     }
+
+//     Employe public employe;
+//     function setEmploye()public{
+//       employe = Employe("Ammar",10,50);
+//     }
+
+//     function get()public view returns(string memory) {
+//         return employe.name;
+//     }
+
+
+// }
+
+
+
+
+// struct Employe{
+//     string name;
+//     uint age;
+//     uint val;
+// }
+
+// contract Mapping{
+// mapping (address=>Employe) public info;
+
+
+
+// function setInfo(string memory _name,uint _age,uint _val)public {
+//     info[msg.sender] = Employe(_name,_age,_val);
+// }
+
+
+// function get()public view returns (Employe memory){
+//     return info;
+// }
+
+
+// }
+
+
+
+
+// struct test{
+//     string name;
+//     uint age;
+//     uint salary;
+// }
+
+
+// contract teste{
+// mapping (address=>test)public info;
+
+// function set()public {
+// info[msg.sender] = test("Ammar",23,5666);
+// }
+
+
+// }
+
+
+
+// contract test{
+
+// uint base = 3;
+// uint exponent = 4;
+// uint result =1;
+
+
+// function setVal()public {
+//     while(exponent!=0){
+//         result = result*3;
+//         --exponent;
+//     }
+// }
+
+// function getVal()public view returns (uint){
+//     return result;
+// }
+// }
+
+
+
+// contract test{
+//     function set(uint _num)public pure returns (uint) {
+//         uint num = _num;
+//         uint reverse = 0;
+//         uint reminder;
+//         uint originalNum = num;
+
+//         while (num!=0){
+//             reminder = num%10;
+//             reverse = reverse*10+reminder;
+//             num /=10;
+//         }
+//         if (reverse==originalNum){
+//              return 1;
+// }
+//         else {
+//              return 0;
+// }
+    
+//     }
+// }
+
+
+// contract primeNum{
+//     function primeSet(uint _num)public pure returns (string memory) {
+//         uint num = _num;
+//         bool flag = false;
+//         for (uint i=2;i<=num/2;i++){
+//             if (num%i==0){
+//                 flag = true;
+//                 break;
+//             }
+//         }
+//         if(!flag){
+//             return "It is a prime";
+//         }
+//         else {
+//             return "It is not a prime";
+//         }
+//     }
+// }
+
+// contract test {
+
+// function setPrime(uint _num)public pure returns (string memory) {
+//     uint num = _num;
+//     bool falg = false;
+//     for (uint i=2;i<=num/2;i++){
+//         if (num%i==0){
+//             falg = true;
+//             break;
+//         }
+//     }
+//     if (!falg){
+//         return "It is a prime number";
+//     }
+//     else {
+//         return "It is not a prime number";
+//     }
+
+ 
+// }
+// }
+
+
+
+
+// contract Power{
+   
+//     function setPower(uint _base,uint _exponent)public pure returns (uint){
+//        uint Base = _base;
+//        uint exponent = _exponent;
+//        uint result = 1;
+
+//        while (exponent!=0){
+//            result *=Base;
+//            --exponent; 
+//        }
+
+//        return result;
+
+//     }
+// }

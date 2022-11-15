@@ -2,209 +2,208 @@
 pragma solidity ^0.8.0;
 
 
+// contract Task1{
+//     uint num = 20;
 
-contract Test{
 
-    address payable  public  getter = payable (0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2);
+//     function setNum()public {
+//         num = 30;
+//     }
+//     function getNum()public  view returns(uint){
+//         return  num;
+//     }
+// }
 
-    struct Funder {
-        address funderAdr;
-        uint256 balance;
-        uint256 withdrawn;
-    }
 
-    mapping(address => Funder) public Funders;
+// contract task2{
+//  uint num1;
+
+
+//  function setNum(uint _a)public {
+//      num1 = _a;
+//  }   
+//  function getNum()public view returns(uint){
+//      return num1;
+//  }
+// }
+
+
+
+// contract task3{
+//     function evaulate(uint _a,uint _b)public {
+
+//     }
+// }
+
+
+// contract task4{
+//     function reminder(uint _a)public pure  returns (uint) {
+//         require(_a>0,"Not a require number");
+//         return  _a%3;
+//     }
+// }
+
+
+// contract  task4 {
     
+// uint num = 124;
+// uint digit;
+// uint sum = 0;
 
-    receive()external payable {}
-    fallback()external payable {}
+// function sumDigi()public{
+//     while (num>0){
+//         digit = num%10;
+//         sum += digit;
+//         num /=num;
+//     }
+// }
 
+// function getSum()public  view  returns ( uint){
+//     return sum;
+// }
 
-    function checkBalance()public view returns(uint){
-       return address(this).balance;
-    }  
-
-
-    // function Call(address payable _addr)public {
-        
-
-    //     (bool sent,) = getter.call{value:1000000000000000000}("");
-    //     require(sent,"Transuction failed"); 
-    // }
-
-
-
+// }
 
 
 
-}
-
-
-
-
-
-//    contract share {
-
-
-//        address payable public   admin;
-//        uint withdrawNum;
-//        constructor(){
-//            admin = payable(msg.sender);
-//        } 
-                  
-//             mapping (address=>bool) public  depositStatus;
-//             mapping (address =>uint )public depositValue;
-
-
-
-//             function deposit()public payable{
-//                   admin.transfer(msg.value);
-//                   depositStatus[msg.sender] = true;
+// contract PRIM{
+//     function prime(uint _n) public pure returns(string memory) {
+//         for (uint i=2;i<=_n/2;i++){
+//             if(_n%i==0){
+//                 return  "Not a prime number";
 //             }
-
-//              function withdraw()public {
-
-//              }
-//    }
-
-
-
-
-
-contract Bank {
-    address[] public accounts;
-    mapping(address => uint) etherRecieved;
-    uint withdrawalCount;
-
-    function deposit() public payable returns(bool) {
-        require(msg.value >0, "Deposits shouldbe greater than zero");
-        accounts.push(address(msg.sender));
-        etherRecieved[msg.sender] = etherRecieved[msg.sender] + msg.value;
-        return true;
-    }
-
-
-    modifier accountExists () {
-        
-        for (uint i=0; i<accounts.length; i++){
-            if (accounts[i] == address(msg.sender)){  
-                _;
-                break;
-            }
-        }
-    }
-
-    function withdraw () public payable accountExists returns (uint withdrawalAmount){
-        require(etherRecieved[msg.sender] > 0, "Balance is zero");
-        if (withdrawalCount == 0) {
-            withdrawalAmount = (etherRecieved[msg.sender] * 9) / 10;
-        }else if (withdrawalCount == 1){
-            withdrawalAmount = (etherRecieved[msg.sender] * 8) / 20;
-        }else if (withdrawalCount == 2){
-            withdrawalAmount = (etherRecieved[msg.sender] * 7) / 30;
-        }else{
-            withdrawalAmount =etherRecieved[msg.sender];
-        }
-
-        for(uint i = 0; i < accounts.length; i++){
-            if(accounts[i] == msg.sender){
-                accounts[i] = address(0);
-            }
-        }
-
-        etherRecieved[msg.sender] = 0;
-        payable(msg.sender).transfer(withdrawalAmount);        
-        withdrawalCount += 1;
-
-    } 
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-contract Deposit {
-    mapping (address => uint256) depositors;
-    uint counter;
-
-    constructor() {
-        counter = 0;
-    }
-    function deposit() public payable {
-        require(msg.value >= 1 ether,"The minimum amount entered should be 1 ether");
-        depositors[msg.sender] += msg.value;
-    }
-
-    function recieve() external  payable {
-        deposit();
-    }
-
-    function withdrawal() public {
-        require(depositors[msg.sender] > 0,"You have not deposited any ether");
-        if(counter == 0) {
-            payable(msg.sender).transfer((depositors[msg.sender] / 100) * 90);
-        }
-        else if(counter == 1) {
-            payable(msg.sender).transfer((depositors[msg.sender] / 100) * 80);
-        }
-        else if(counter == 2) {
-            payable(msg.sender).transfer((depositors[msg.sender] / 100) * 70);
-        }
-        depositors[msg.sender] = 0;
-        counter += 1;
-    }
-}
-
-
-
-
-// contract Deposit {
-//     mapping (address => uint256) depositors;
-//     uint counter;
-
-//     constructor() {
-//         counter = 0;
-//     }
-//     function deposit() public payable {
-//         require(msg.value >= 1 ether,"The minimum amount entered should be 1 ether");
-//         depositors[msg.sender] += msg.value;
-//     }
-
-//     function recieve() external  payable {
-//         deposit();
-//     }
-
-//         // mapping (address=>block.timestamp)  time;
-//     function withdrawal() public {
-//         require(depositors[msg.sender] > 0,"You have not deposited any ether");
-//         if(counter == 0) {
-//             payable(msg.sender).transfer((depositors[msg.sender] *90) /100);
+//             else {
+//                 return "It is a prime";
+//             }
 //         }
-//         else if(counter == 1) {
-//             payable(msg.sender).transfer((depositors[msg.sender] *80) / 100);
-//         }
-//         else if(counter == 2) {
-//             payable(msg.sender).transfer((depositors[msg.sender]*70) / 100);
-//         }
-//         depositors[msg.sender] = 0;
-//         counter += 1;
 //     }
+// }
+
+
+
+// contract sumOfDidigits{
+//     uint sum =0;
+//     uint number = 1246;
+//     uint digit;
+//     function setDigit()public{
+//         while (number>0){
+//             digit = number%10;
+//             sum += digit;
+//             number /= 10;
+//         }
+//     }
+
+//     function getSum()public  view returns(uint){
+//         return sum;
+
+// }
+// }
+
+
+// contract Prime{
+// uint num;
+// bool flag = false;
+//     function prime(uint _num)public {
+//         num = _num;
+//         for (uint i=2;i<=num/2;i++){
+//             if (num%i==0){
+//                 flag = true;
+//                 break;
+//             }
+//         }
+// }
+// function getResult()public view returns (string memory){
+//     if (!flag){
+//         return "It is a prime number";
+//     }
+//     else {
+//         return "It is not a prime number";
+//     }
+// }
+
+// }
+
+
+
+////////////////// Leap year //////////////////
+
+// contract LeapYear{
+
+// uint year = 2019;
+// bool leap = false;
+
+// function setLeap()public {
+//     if(year%4==0){
+//         if(year%100==0){
+//             if (year%400==0){
+//                 leap = true;
+//             }
+//             else {
+//                 leap = false;
+//             }
+//         }
+//         else {
+//             leap = true;
+//         }
+//     }
+//     else {
+//         leap = false;
+//     }
+   
+// }
+
+// function getLeapVal()public view returns (string memory) {
+//     if(!leap){
+//         return "It is not a leap year";
+//     }
+//     else {
+//         return "It is a leap year";
+//     }
+// }
+
+// }
+
+///////////////////////////  factorial number ///////////////
+
+
+// contract Factorial{
+
+//     uint numb = 4;
+//     uint factorial = 1;
+
+
+//     function setFactorial()public {
+//         for(uint i=1;i<=numb;i++){
+//             factorial *=i;
+//         }
+//     }
+
+//     function getFactorial()public view returns (uint){
+//         return factorial;
+//     }
+// }
+
+
+
+///////////////////////// Fabiconal series //////////////////////
+
+
+
+// contract Fabiconal{
+
+// function setFabiconalNumb()public pure returns (uint) {
+//     uint n = 7;
+//     uint a = 0;
+//     uint b=1;
+//     uint count =1;
+//     while (count<=n){
+//     uint temp =b;
+//     b = b+a;
+//     a = temp;
+//     count++;
+//     }
+//     return b;
+// }
+// function getFabiconalNumb()public  view returns (uint){
+//     return b;
 // }

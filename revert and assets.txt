@@ -1,0 +1,31 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+
+
+contract Revert{
+    address public owner = msg.sender;
+    uint age = 20;
+
+error throwError(string,address);  
+
+    function revertCond(uint _x)public {
+        if(_x<10){
+            revert("Value less than 10");
+        }
+        age += 5;
+     }
+
+    function getAge()public  view  returns(uint){
+        return age;
+    }
+
+    function onlyOwner()public view returns(string memory) {
+        if (msg.sender != owner){
+            revert throwError("Not an owner",msg.sender);
+        }
+        return "You are an owner";
+
+
+    }
+}

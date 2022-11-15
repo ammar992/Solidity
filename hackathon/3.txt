@@ -1,0 +1,31 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+struct Product_Details {
+    string productName;
+    uint256 price;
+    string from;
+}
+
+contract task3 {
+    address public owner;
+
+    modifier onlyOnwer() {
+        require(msg.sender == owner);
+        _;
+    }
+
+    Product_Details d1;
+
+    function setDetails(
+        string memory productName,
+        uint256 _price,
+        string memory _from
+    ) public {
+        d1 = Product_Details(productName, _price, _from);
+    }
+
+    function getDetails() public view returns (Product_Details memory) {
+        return d1;
+    }
+}

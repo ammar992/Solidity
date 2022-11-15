@@ -1,0 +1,52 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract task1 {
+    address public admin;
+
+    constructor() {
+        admin = msg.sender;
+    }
+
+    modifier onlyAdmin() {
+        require(msg.sender == admin);
+        _;
+    }
+
+    struct paoitentDetails {
+        string name;
+        uint256 age;
+        string city;
+        string location;
+    }
+
+    paoitentDetails[] paitents;
+
+    function setPaitentsDetails(
+        string memory _name,
+        uint256 _age,
+        string memory _city,
+        string memory _location
+    ) public {
+        paoitentDetails memory pait1 = paoitentDetails(
+            _name,
+            _age,
+            _city,
+            _location
+        );
+        paitents.push(pait1);
+    }
+
+    function getDetials(uint256 _x)
+        public
+        view
+        onlyAdmin
+        returns (paoitentDetails memory)
+    {
+        return paitents[_x];
+    }
+
+    function deleteAccount(uint256 _x) public onlyAdmin {
+        delete paitents[_x];
+    }
+}

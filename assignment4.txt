@@ -1,0 +1,47 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+
+// contract Task1{
+//     uint base;
+//     uint exponent;
+//     uint result = 1;
+
+//     function numExponent(uint _base,uint _exponent)public {
+//         base = _base;
+//         exponent = _exponent;
+
+//         while (exponent !=0){
+//             result *= base;
+//             --exponent;
+//         }
+//     }
+//     function getResult()public view returns(uint){
+//         return result;
+//     }
+// }
+
+// contract task2{
+
+//    function setVal(uint _num)public pure returns(uint){
+//        uint num = _num;
+//        uint reverseNumb = 0;
+//        uint reminder;
+//        uint orignalNumb = num;
+
+
+//        while (num!=0){
+//            reminder = num%10;
+//            reverseNumb = reverseNumb*10+reminder;
+//            num /= 10;
+//        }
+//        if(orignalNumb==reverseNumb){
+//            return 1;
+//        }
+//        else {
+//            return 0;
+//        }
+//    } 
+// }
+
+
